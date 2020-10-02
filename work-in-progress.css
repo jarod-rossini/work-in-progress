@@ -1,0 +1,168 @@
+body{
+	padding: none;
+	margin: 0;
+	font-family: police1;
+	overflow-x: hidden;
+}
+
+@font-face{
+	font-family: police1;
+	src: url('polices/police1.otf');
+}
+
+@keyframes rotate{
+	0%{transform: rotateZ(1080deg)}
+	50%{opacity:1;}
+	100%{opacity:0;}
+}
+
+@keyframes openright{
+	0%{}
+	50%{transform: translateX(0%);}
+	100%{transform: translateX(110%);}
+}
+
+@keyframes openleft{
+	0%{}
+	50%{transform: translateX(0%);}
+	100%{transform: translateX(-110%);}
+}
+
+#navbar{
+	display: flex;
+	justify-content: space-evenly;
+	background-image: linear-gradient(black, gray);
+	border-bottom: solid 2px black;
+}
+
+#navbar a{
+	color: white;
+	text-decoration: none;
+}
+
+#navbar a:hover{
+	color: orange;
+}
+
+#first_of_all{
+	background-color: black;
+	margin-top: 10%;
+	font-size: 1.1em;
+}
+
+.bloc1{
+	width: 50vw;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+
+.bloc1 img{
+	max-width: 40%;
+}
+
+.bloc2{
+	width: 50vw;
+	display: inline-block;
+	clear: both;
+	color: white;
+}
+
+#door{
+	width: 100%;
+	background-color: orange;
+	position: absolute;
+	top: 0;
+}
+
+.left_door{
+	width: 49.5vw;
+	height: 100vh;
+	display: inline-block;
+	float: left;
+	position: absolute;
+	left: 0;
+	animation: 8s ease-in 1s openleft;
+	animation-fill-mode: forwards;
+	background-image: url('images/portegauche.jpg');
+	background-size: cover;
+	box-shadow: 20px 0 20px black;
+	z-index: 0;
+}
+
+.right_door{
+	width: 49.5vw;
+	height: 100vh;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	animation: 8s ease-in 1s openright;
+	animation-fill-mode: forwards;
+	background-image: url('images/portedroite.jpg');
+	background-size: cover;
+	box-shadow: -20px 0 20px black;
+	z-index: 0;
+}
+
+.door_spacing{
+	width: 16vw;
+	position: absolute;
+	right: 50%; left: 50%;
+	transform: translateX(-50%);
+	margin-top: 23%;
+	z-index: 1;
+	filter: grayscale(100%);
+}
+.door_spacing img{
+	max-width: 100%;
+	animation: 8s ease-in 1s rotate;
+	animation-fill-mode: forwards;
+}
+
+#last_content{
+	background-image: linear-gradient(gray, black);
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	bottom: 0;
+	width: 100%;
+	align-items: center;
+	padding: 2vh 0;
+	z-index: -1;
+	border-top: solid 2px black;
+}
+
+.link{
+	width: 30vw;
+}
+
+.link ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	list-style: none;
+	margin-right: 10%;
+}
+
+.link a{
+	text-decoration: none;
+	color: white;
+}
+
+.link a:hover{
+	color: orange;
+}
+
+.network{
+	display: flex;
+	width: 12vw;
+}
+
+.network img{
+	max-width: 80%;
+	border-radius: 10px;
+}
+
+.network img:hover{
+	opacity: 0.8;
+}
